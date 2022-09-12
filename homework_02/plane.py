@@ -1,6 +1,5 @@
 from homework_02.exceptions import CargoOverload
 from homework_02.base import Vehicle
-from copy import copy
 
 
 class Plane(Vehicle):
@@ -18,6 +17,6 @@ class Plane(Vehicle):
             self.cargo += other
 
     def remove_all_cargo(self):
-        prev_cargo = copy(self.cargo)
+        prev_cargo = self.cargo
         self.cargo = 0
         return prev_cargo
