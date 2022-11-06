@@ -50,7 +50,6 @@ async def async_main():
         )
         for user in users_data:
             await create_users(session, user)
-        await session.commit()
         for post in posts_data:
             await create_posts(session, post)
         await session.commit()
