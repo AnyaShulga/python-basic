@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}
+  School courses
+{% endblock %}
+{% block body %}
+  {% if courses %}
+    <h1>List of courses:</h1>
+    <ul class="list-group">
+      {% for course in courses %}
+      <li class="list-group-item">
+        <a>
+          {{ course.name }} ({{ course.duration }} hours)
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <h1>No courses added</h1>
+  {% endif %}
+
+{% endblock %}
