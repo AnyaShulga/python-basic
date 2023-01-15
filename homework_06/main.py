@@ -29,6 +29,9 @@ def add_user():
     if request.method == "GET":
         return render_template("add.html", form=form)
 
+    if not form.validate_on_submit():
+        return render_template("add.html", form=form), 400
+
     name = form.name.data
     duration = form.duration.data
 
