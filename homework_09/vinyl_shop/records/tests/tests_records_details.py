@@ -19,7 +19,7 @@ class RecordsDetailsTestCase(TestCase):
         )
 
     def tearDown(self):
-        del self.record
+        self.record.delete()
 
     def test_details_records(self):
         self.record.genre.add(self.rec_genre)
